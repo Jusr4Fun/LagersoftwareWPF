@@ -1,0 +1,132 @@
+﻿<Page x:Class="LagersoftwareWPF.Sites.AddItemWindowSites.AddItemCable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LagersoftwareWPF.Sites.AddItemWindowSites"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddItemCable">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="30"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            Text="Neues Kabel Hinzufügen" 
+            TextAlignment="Center" 
+            FontSize="25" 
+            Grid.Row="0"/>
+
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="0" 
+                    Text="Name:"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="1" 
+                    Text="Label:"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="2" 
+                    Text="Beschreibung:"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="3" 
+                    Text="Länge:"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="4" 
+                    Text="Anzahl:"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="5" 
+                    Text="Kabel-Typ::"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="6" 
+                    Text="Lagerort:"/>
+
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    Grid.Row="0"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    Grid.Row="1"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    Grid.Row="2"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    Grid.Row="3"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    Grid.Row="4"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    Grid.Row="5"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    Grid.Row="6"/>
+        </Grid>
+        <Button 
+                    Grid.Row="3" 
+                    Grid.Column="0" 
+                    Width="75" 
+                    Height="20" 
+                    Margin="10" 
+                    Content="Speichern"
+                    x:Name="SpeichernBtn"
+                    Click="SaveNew_Click"/>
+
+        <Button 
+                    Grid.Row="3" 
+                    Grid.Column="1" 
+                    Margin="0,10, 10, 10" 
+                    Content="Abbrechen" 
+                    Width="75" 
+                    Height="20" 
+                    HorizontalAlignment="Right"
+                    x:Name="AbbrechenBtn"
+                    Click="Cancel_Click"
+                    />
+    </Grid>
+</Page>

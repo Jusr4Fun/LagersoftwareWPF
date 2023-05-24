@@ -1,0 +1,87 @@
+﻿<Page x:Class="LagersoftwareWPF.Sites.AddItemWindowSites.AddItemMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LagersoftwareWPF.Sites.AddItemWindowSites"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddItemMenu">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button
+            Grid.Row="0"
+            Grid.Column="0"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Nav_AddDisplay_Click"         
+            Content="Bildschirm" />
+        <Button
+            Grid.Row="0"
+            Grid.Column="1"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Nav_AddPeripheral_Click"     
+            Content="Periherie" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Nav_AddCable_Click"           
+            Content="Kabel" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Nav_AddPC_Click"            
+            Content="Computer" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Nav_AddNetworkDevice_Click"            
+            Content="Netzwerk Gerät" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Nav_AddStorageDevice_Click"           
+            Content="Speicher Gerät" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Nav_AddOther_Click"          
+            Content="Anderes" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Padding="10,0,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+                        
+            Content="Zurück" />
+    </Grid>
+</Page>
