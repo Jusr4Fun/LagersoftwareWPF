@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Datenbank;
+using Datenbank.Models;
+using Datenbank.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +23,44 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites
     /// </summary>
     public partial class AddItemCable : Page
     {
+        private LagerverwaltungDBContext _dbContext;
+        private CableDataService _cableDataService;
         public AddItemCable()
         {
             InitializeComponent();
+            _dbContext = new LagerverwaltungDBContext();
+            _cableDataService = new CableDataService(_dbContext);
+            GetAllRequiredData();
+        }
+
+        private void GetAllRequiredData()
+        {
+            var cabletypedataservice = new CableTypeDataService(_dbContext);
+            cabletypedataservice.GetAll();
+            CableType.ItemsSource = cabletypedataservice.CableTypeList;
+            var locationDataService = new LocationDataService(_dbContext);
+            locationDataService.GetAll();
+            Location.ItemsSource = locationDataService.LocationList;
         }
 
         private void SaveNew_Click(object sender, RoutedEventArgs e)
         {
-            
+            string name = Name.Text;
+            string label = Label.Text;
+            string beschreibung = Beschreibung.Text;
+            int anzahl = Convert.ToInt32(Anzahl.Text);
+            Location location = (Location)Location.SelectedItem;
+            double laenge = Convert.ToDouble(Laenge.Text);
+            CableType cableType = (CableType)CableType.SelectedItem;
+            try { 
+                _cableDataService.Create(name, label, beschreibung, anzahl, location, laenge, cableType);
+                MessageBox.Show("Neues Kabel Erfolgreich angelegt");
+                this.NavigationService.GoBack();
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bitte überprüfen sie ihre Eingaben");
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

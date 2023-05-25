@@ -56,22 +56,22 @@
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="3" 
-                    Text="Länge:"/>
-            <TextBlock 
-                    Margin="10" 
-                    Grid.Column="0" 
-                    Grid.Row="4" 
                     Text="Anzahl:"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
+                    Grid.Row="4" 
+                    Text="Lagerort:"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
                     Grid.Row="5" 
-                    Text="Kabel-Typ:"/>
+                    Text="Länge:"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="6" 
-                    Text="Lagerort:"/>
+                    Text="Kabel-Typ:"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
@@ -87,34 +87,43 @@
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
+                    x:Name="Name"
                     Grid.Row="0"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="Filler"
+                    x:Name="Label"
                     Grid.Row="1"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
+                    x:Name="Beschreibung"
                     Grid.Row="2"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="1" 
+                    x:Name="Anzahl"
                     Grid.Row="3"/>
+            <ComboBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    x:Name="Location"
+                    DisplayMemberPath="LocationName"
+                    Text="Filler" 
+                    Grid.Row="4"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
-                    Grid.Row="4"/>
-            <ComboBox 
-                    Margin="10" 
-                    Grid.Column="1" 
-                    Text="Filler" 
+                    Text="1" 
+                    x:Name="Laenge"
                     Grid.Row="5"/>
             <ComboBox 
                     Margin="10" 
+                    x:Name="CableType"
+                    DisplayMemberPath="CableTypeName"
                     Grid.Column="1" 
                     Text="Filler" 
                     Grid.Row="6"/>

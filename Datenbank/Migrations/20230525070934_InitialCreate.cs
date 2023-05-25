@@ -93,6 +93,21 @@ namespace Datenbank.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "PeripheralType",
+                columns: table => new
+                {
+                    PeripheralTypeID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    PeripheralTypeName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PeripheralType", x => x.PeripheralTypeID);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "ScreenSize",
                 columns: table => new
                 {
@@ -295,6 +310,40 @@ namespace Datenbank.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Peripheral",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false, defaultValueSql: "(NEXT VALUE FOR ItemIds)"),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Label = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    LocationID = table.Column<int>(type: "int", nullable: false),
+                    PeriphalTypeID = table.Column<int>(type: "int", nullable: false),
+                    PeripheralTypeID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Peripheral", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Peripheral_Location_LocationID",
+                        column: x => x.LocationID,
+                        principalTable: "Location",
+                        principalColumn: "LocationID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Peripheral_PeripheralType_PeripheralTypeID",
+                        column: x => x.PeripheralTypeID,
+                        principalTable: "PeripheralType",
+                        principalColumn: "PeripheralTypeID",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Display",
                 columns: table => new
                 {
@@ -392,6 +441,16 @@ namespace Datenbank.Migrations
                 column: "ManufacturerID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Peripheral_LocationID",
+                table: "Peripheral",
+                column: "LocationID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Peripheral_PeripheralTypeID",
+                table: "Peripheral",
+                column: "PeripheralTypeID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_StorageDevice_FormFactorID",
                 table: "StorageDevice",
                 column: "FormFactorID");
@@ -426,6 +485,9 @@ namespace Datenbank.Migrations
                 name: "PC");
 
             migrationBuilder.DropTable(
+                name: "Peripheral");
+
+            migrationBuilder.DropTable(
                 name: "StorageDevice");
 
             migrationBuilder.DropTable(
@@ -436,6 +498,9 @@ namespace Datenbank.Migrations
 
             migrationBuilder.DropTable(
                 name: "NetworkDeviceType");
+
+            migrationBuilder.DropTable(
+                name: "PeripheralType");
 
             migrationBuilder.DropTable(
                 name: "FormFactor");

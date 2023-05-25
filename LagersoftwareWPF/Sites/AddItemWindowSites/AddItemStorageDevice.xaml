@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock 
-            Text="Neuen Bildschirm Hinzufügen" 
+            Text="Neues Speicher Gerät Hinzufügen" 
             TextAlignment="Center" 
             FontSize="25" 
             Grid.Row="0"/>
@@ -61,12 +61,12 @@
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="4" 
-                    Text="Seriennummer:"/>
+                    Text="Lagerort:"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="5" 
-                    Text="Bildschirmdiagonale:"/>
+                    Text="Seriennummer:"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
@@ -76,53 +76,70 @@
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="7" 
-                    Text="Lagerort:"/>
+                    Text="Kapazität:"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="8" 
-                    Text=""/>
+                    Text="Formfactor"/>
 
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
+                    x:Name="Name"
                     Grid.Row="0"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
+                    x:Name="Label"
                     Grid.Row="1"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="Filler"
+                    x:Name="Beschreibung"
                     Grid.Row="2"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
+                    x:Name="Anzahl"
                     Grid.Row="3"/>
-            <TextBox 
-                    Margin="10" 
-                    Grid.Column="1" 
-                    Text="Filler" 
-                    Grid.Row="4"/>
             <ComboBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
+                    DisplayMemberPath="LocationName"
+                    x:Name="Lagerort"
+                    Grid.Row="4"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    x:Name="Seriennummer"
                     Grid.Row="5"/>
             <ComboBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
+                    DisplayMemberPath="ManufacturerName"
+                    x:Name="Herrsteller"
                     Grid.Row="6"/>
+            <TextBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    x:Name="Kapazitaet"
+                    Grid.Row="7"/>
             <ComboBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
-                    Grid.Row="7"/>
+                    DisplayMemberPath="FormFactorName"
+                    x:Name="Formfactor"
+                    Grid.Row="8"/>
         </Grid>
         <Grid Grid.Row="3" Margin=" 20,0,20,10" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>

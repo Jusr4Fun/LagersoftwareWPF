@@ -129,6 +129,21 @@ namespace Datenbank.Migrations
                     b.ToTable("NetworkDeviceType");
                 });
 
+            modelBuilder.Entity("Datenbank.Models.PeripheralType", b =>
+                {
+                    b.Property<int>("PeripheralTypeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("PeripheralTypeName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("PeripheralTypeID");
+
+                    b.ToTable("PeripheralType");
+                });
+
             modelBuilder.Entity("Datenbank.Models.ScreenSize", b =>
                 {
                     b.Property<int>("ScreenSizeID")
@@ -189,6 +204,21 @@ namespace Datenbank.Migrations
                         .HasColumnType("longtext");
 
                     b.ToTable("Other", (string)null);
+                });
+
+            modelBuilder.Entity("Datenbank.Models.Peripheral", b =>
+                {
+                    b.HasBaseType("Datenbank.Models.Item");
+
+                    b.Property<int>("PeriphalTypeID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PeripheralTypeID")
+                        .HasColumnType("int");
+
+                    b.HasIndex("PeripheralTypeID");
+
+                    b.ToTable("Peripheral", (string)null);
                 });
 
             modelBuilder.Entity("Datenbank.Models.Display", b =>
@@ -278,6 +308,17 @@ namespace Datenbank.Migrations
                     b.Navigation("Manufacturer");
                 });
 
+            modelBuilder.Entity("Datenbank.Models.Peripheral", b =>
+                {
+                    b.HasOne("Datenbank.Models.PeripheralType", "PeripheralType")
+                        .WithMany("Peripheral")
+                        .HasForeignKey("PeripheralTypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PeripheralType");
+                });
+
             modelBuilder.Entity("Datenbank.Models.Display", b =>
                 {
                     b.HasOne("Datenbank.Models.ScreenSize", "ScreenSize")
@@ -334,6 +375,11 @@ namespace Datenbank.Migrations
             modelBuilder.Entity("Datenbank.Models.NetworkDeviceType", b =>
                 {
                     b.Navigation("NetworkDevice");
+                });
+
+            modelBuilder.Entity("Datenbank.Models.PeripheralType", b =>
+                {
+                    b.Navigation("Peripheral");
                 });
 
             modelBuilder.Entity("Datenbank.Models.ScreenSize", b =>
