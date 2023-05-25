@@ -17,11 +17,21 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites;
     /// <summary>
     /// Interaktionslogik für AddItemPeripheral.xaml
     /// </summary>
-    public partial class AddItemPeripheral : Page
+public partial class AddItemPeripheral : Page
+{
+    public AddItemPeripheral()
     {
-        public AddItemPeripheral()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
+
+    private void SaveNew_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void Back_Click(object sender, RoutedEventArgs e)
+    {
+        this.NavigationService.GoBack();
+    }
+}
 

@@ -24,4 +24,14 @@ public partial class AddItemDisplay : Page
     {
         InitializeComponent();
     }
+
+    private void SaveNew_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void Back_Click(object sender, RoutedEventArgs e)
+    {
+        this.NavigationService.GoBack();
+    }
 }

@@ -5,7 +5,10 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datenbank", "Datenbank\Datenbank.csproj", "{73B39D79-701C-4F1E-B070-099D8356A615}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LagersoftwareWPF", "LagersoftwareWPF\LagersoftwareWPF.csproj", "{BA2C5DCC-40FB-4B15-BF84-B592D2796325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LagersoftwareWPF", "LagersoftwareWPF\LagersoftwareWPF.csproj", "{BA2C5DCC-40FB-4B15-BF84-B592D2796325}"
+	ProjectSection(ProjectDependencies) = postProject
+		{73B39D79-701C-4F1E-B070-099D8356A615} = {73B39D79-701C-4F1E-B070-099D8356A615}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

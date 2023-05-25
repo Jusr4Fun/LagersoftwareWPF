@@ -10,7 +10,7 @@ public class LagerverwaltungDBContext : DbContext
     public DbSet<FormFactor> FormFactor { get; set; }
     public DbSet<CableType> CableType { get; set; }
 
-    static readonly string connectionString = "Server=localhost; User ID=root; Password=Chance2015; Database=Lagersoftware";
+    static readonly string connectionString = "Server=localhost; User ID=root; Password=Chance2015 ;Database=Lagersoftware";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

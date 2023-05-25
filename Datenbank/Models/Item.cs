@@ -6,7 +6,7 @@ public abstract class Item
     public string Name { get; set; }
     public string Label { get; set; }
     public string Description { get; set; }
-    public int Count { get; set; }
+    public int Amount { get; set; }
 
     public int LocationID { get; set; }
     public Location Location { get; set; }

@@ -29,7 +29,8 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites
         {
             
         }
-        private void Cancel_Click(object sender, RoutedEventArgs e)
+
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
         }

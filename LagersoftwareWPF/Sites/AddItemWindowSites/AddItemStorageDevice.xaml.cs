@@ -13,16 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LagersoftwareWPF.Sites.AddItemWindowSites
+namespace LagersoftwareWPF.Sites.AddItemWindowSites;
+
+/// <summary>
+/// Interaktionslogik für AddItemStorageDevice.xaml
+/// </summary>
+public partial class AddItemStorageDevice : Page
 {
-    /// <summary>
-    /// Interaktionslogik für AddItemStorageDevice.xaml
-    /// </summary>
-    public partial class AddItemStorageDevice : Page
+    public AddItemStorageDevice()
     {
-        public AddItemStorageDevice()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
+
+    private void SaveNew_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void Back_Click(object sender, RoutedEventArgs e)
+    {
+        this.NavigationService.GoBack();
     }
 }

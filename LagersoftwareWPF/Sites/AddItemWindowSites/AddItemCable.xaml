@@ -5,12 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LagersoftwareWPF.Sites.AddItemWindowSites"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="400"
       Title="AddItemCable">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition MaxHeight="30"/>
+            <RowDefinition MaxHeight="50"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
@@ -21,12 +21,14 @@
             FontSize="25" 
             Grid.Row="0"/>
 
-        <Grid Grid.Row="1" Margin="20">
+        <Grid Grid.Row="1" Margin="20,0,20,20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -64,12 +66,22 @@
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="5" 
-                    Text="Kabel-Typ::"/>
+                    Text="Kabel-Typ:"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="6" 
                     Text="Lagerort:"/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="7" 
+                    Text=""/>
+            <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="8" 
+                    Text=""/>
 
             <TextBox 
                     Margin="10" 
@@ -96,37 +108,50 @@
                     Grid.Column="1" 
                     Text="Filler" 
                     Grid.Row="4"/>
-            <TextBox 
+            <ComboBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
                     Grid.Row="5"/>
-            <TextBox 
+            <ComboBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
                     Grid.Row="6"/>
         </Grid>
-        <Button 
-                    Grid.Row="3" 
+        <Grid Grid.Row="3" Margin=" 20,0,20,10" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Button  
                     Grid.Column="0" 
+                    Margin="10,0, 10, 0" 
+                    Content="Zurück" 
                     Width="75" 
                     Height="20" 
-                    Margin="10" 
-                    Content="Speichern"
-                    x:Name="SpeichernBtn"
-                    Click="SaveNew_Click"/>
-
-        <Button 
-                    Grid.Row="3" 
+                    HorizontalAlignment="Left"
+                    x:Name="BackBtn"
+                    Click="Back_Click"
+                    />
+            <Button 
                     Grid.Column="1" 
-                    Margin="0,10, 10, 10" 
+                    Margin="10,0, 10, 0" 
                     Content="Abbrechen" 
                     Width="75" 
                     Height="20" 
                     HorizontalAlignment="Right"
-                    x:Name="AbbrechenBtn"
-                    Click="Cancel_Click"
-                    />
+                    x:Name="CancelBtn"
+                    IsCancel="True"/>
+            <Button 
+                    Grid.Column="2" 
+                    Margin="10,0, 10, 0"
+                    Width="75" 
+                    Height="20" 
+                    Content="Speichern"
+                    x:Name="SaveBtn"
+                    Click="SaveNew_Click"/>
+        </Grid>
     </Grid>
 </Page>
