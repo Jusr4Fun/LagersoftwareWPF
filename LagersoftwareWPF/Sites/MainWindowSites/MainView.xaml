@@ -80,6 +80,7 @@
                 </ListView.View>
             </ListView>
             <ContentControl 
+                Grid.Column="1"
                 x:Name="Detail"/>
 
         </Grid>
