@@ -71,8 +71,7 @@
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
-                    Grid.Row="7" 
-                    Text=":"/>
+                    Grid.Row="7"/>
             <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 

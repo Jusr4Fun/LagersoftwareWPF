@@ -43,6 +43,34 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
             {
                 Detail.Content = new CableDetails();
             }
+            else if (selected.GetType() == typeof(Display))
+            {
+                Detail.Content = new DisplayDetails();
+            }
+            else if (selected.GetType() == typeof(NetworkDevice))
+            {
+                Detail.Content = new NetworkDeviceDetails();
+            }
+            else if (selected.GetType() == typeof(Other))
+            {
+                Detail.Content = new OtherDetails();
+            }
+            else if (selected.GetType() == typeof(PC)) 
+            { 
+                Detail.Content = new PCDetails(); 
+            }
+            else if (selected.GetType() == typeof(Peripheral))
+            {
+                Detail.Content = new PeripheralDetails();
+            }
+            else if (selected.GetType() == typeof(StorageDevice))
+            {
+                Detail.Content = new StorageDeviceDetails();
+            }
+            else
+            {
+                Detail.Content = null;
+            }
             //Detail.Content = 
         }
     }

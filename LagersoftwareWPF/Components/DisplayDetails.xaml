@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LagersoftwareWPF.Components.CableDetails"
+﻿<UserControl x:Class="LagersoftwareWPF.Components.DisplayDetails"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -51,12 +51,22 @@
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="5" 
-                    Text="Länge:"/>
+                    Text="Seriennummer:"/>
         <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="6" 
-                    Text="Kabel-Typ:"/>
+                    Text="Bildschirmdiagonale:"/>
+        <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="7" 
+                    Text="Herrsteller:"/>
+        <TextBlock 
+                    Margin="10" 
+                    Grid.Column="0" 
+                    Grid.Row="8" 
+                    Text=""/>
 
         <TextBox 
                     Margin="10" 
@@ -67,40 +77,47 @@
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler"
+                    Text="Filler" 
                     x:Name="Label"
                     Grid.Row="1"/>
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="Filler"
                     x:Name="Beschreibung"
                     Grid.Row="2"/>
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="1" 
+                    Text="Filler" 
                     x:Name="Anzahl"
                     Grid.Row="3"/>
         <ComboBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    x:Name="Location"
-                    DisplayMemberPath="LocationName"
                     Text="Filler" 
+                    DisplayMemberPath="LocationName"
+                    x:Name="Lagerort"
                     Grid.Row="4"/>
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="1" 
-                    x:Name="Laenge"
+                    Text="Filler" 
+                    x:Name="Seriennummer"
                     Grid.Row="5"/>
         <ComboBox 
                     Margin="10" 
-                    x:Name="CableType"
-                    DisplayMemberPath="CableTypeName"
                     Grid.Column="1" 
                     Text="Filler" 
+                    DisplayMemberPath="ScreenSizeName"
+                    x:Name="Bildschirmdiagonale"
                     Grid.Row="6"/>
+        <ComboBox 
+                    Margin="10" 
+                    Grid.Column="1" 
+                    Text="Filler" 
+                    DisplayMemberPath="ManufacturerName"
+                    x:Name="Herrsteller"
+                    Grid.Row="7"/>
     </Grid>
 </UserControl>

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LagersoftwareWPF.Components.CableDetails"
+﻿<UserControl x:Class="LagersoftwareWPF.Components.OtherDetails"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -51,12 +51,13 @@
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="5" 
-                    Text="Länge:"/>
+                    Grid.RowSpan="2"
+                    Text="Detail Beschreibung:"/>
         <TextBlock 
                     Margin="10" 
                     Grid.Column="0" 
-                    Grid.Row="6" 
-                    Text="Kabel-Typ:"/>
+                    Grid.Row="7" 
+                    Text=""/>
 
         <TextBox 
                     Margin="10" 
@@ -67,40 +68,38 @@
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler"
+                    Text="Filler" 
                     x:Name="Label"
                     Grid.Row="1"/>
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="Filler"
                     x:Name="Beschreibung"
                     Grid.Row="2"/>
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="1" 
+                    Text="Filler" 
                     x:Name="Anzahl"
                     Grid.Row="3"/>
         <ComboBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    x:Name="Location"
-                    DisplayMemberPath="LocationName"
                     Text="Filler" 
+                    DisplayMemberPath="LocationName"
+                    x:Name="Lagerort"
                     Grid.Row="4"/>
         <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="1" 
-                    x:Name="Laenge"
+                    Height="100"
+                    Grid.RowSpan="3"
+                    Text="Filler"
+                    x:Name="DetailBeschreibung"
+                    TextWrapping="Wrap"
+                    AcceptsReturn="True"
+                    VerticalScrollBarVisibility="Visible"
                     Grid.Row="5"/>
-        <ComboBox 
-                    Margin="10" 
-                    x:Name="CableType"
-                    DisplayMemberPath="CableTypeName"
-                    Grid.Column="1" 
-                    Text="Filler" 
-                    Grid.Row="6"/>
     </Grid>
 </UserControl>
