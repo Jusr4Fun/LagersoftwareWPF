@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datenbank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace LagersoftwareWPF.Components
     /// </summary>
     public partial class CableDetails : UserControl
     {
-        public CableDetails()
+        private Cable _cable;
+        public CableDetails(Cable cable)
         {
             InitializeComponent();
+            _cable = cable;
         }
     }
 }

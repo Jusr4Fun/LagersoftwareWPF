@@ -41,7 +41,7 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
             var selected = AllList.SelectedItem;
             if (selected.GetType() == typeof(Cable))
             {
-                Detail.Content = new CableDetails();
+                Detail.Content = new CableDetails((Cable)selected);
             }
             else if (selected.GetType() == typeof(Display))
             {
