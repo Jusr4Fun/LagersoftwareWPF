@@ -23,55 +23,65 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
     /// </summary>
     public partial class MainView : Page
     {
+        private ItemDataService _itemDataService;
         public MainView()
         {
             InitializeComponent();
+            _itemDataService = new ItemDataService(new Datenbank.LagerverwaltungDBContext(), new Datenbank.Service.Filter());
             GetAllRequiredData();
+            this.DataContext = _itemDataService;
         }
 
         public void GetAllRequiredData()
         {
-            var itemdataservice = new ItemDataService(new Datenbank.LagerverwaltungDBContext());
-            itemdataservice.GetAll();
-            AllList.ItemsSource = itemdataservice.Items;
+            _itemDataService.GetAll();
         }
 
         private void AllList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selected = AllList.SelectedItem;
-            if (selected.GetType() == typeof(Cable))
+            if (selected != null)
             {
-                Detail.Content = new CableDetails((Cable)selected);
-            }
-            else if (selected.GetType() == typeof(Display))
-            {
-                Detail.Content = new DisplayDetails();
-            }
-            else if (selected.GetType() == typeof(NetworkDevice))
-            {
-                Detail.Content = new NetworkDeviceDetails();
-            }
-            else if (selected.GetType() == typeof(Other))
-            {
-                Detail.Content = new OtherDetails();
-            }
-            else if (selected.GetType() == typeof(PC)) 
-            { 
-                Detail.Content = new PCDetails(); 
-            }
-            else if (selected.GetType() == typeof(Peripheral))
-            {
-                Detail.Content = new PeripheralDetails();
-            }
-            else if (selected.GetType() == typeof(StorageDevice))
-            {
-                Detail.Content = new StorageDeviceDetails();
-            }
-            else
-            {
-                Detail.Content = null;
+                if (selected.GetType() == typeof(Cable))
+                {
+                    Detail.Content = new CableDetails((Cable)selected);
+                }
+                else if (selected.GetType() == typeof(Display))
+                {
+                    Detail.Content = new DisplayDetails();
+                }
+                else if (selected.GetType() == typeof(NetworkDevice))
+                {
+                    Detail.Content = new NetworkDeviceDetails();
+                }
+                else if (selected.GetType() == typeof(Other))
+                {
+                    Detail.Content = new OtherDetails();
+                }
+                else if (selected.GetType() == typeof(PC))
+                {
+                    Detail.Content = new PCDetails();
+                }
+                else if (selected.GetType() == typeof(Peripheral))
+                {
+                    Detail.Content = new PeripheralDetails();
+                }
+                else if (selected.GetType() == typeof(StorageDevice))
+                {
+                    Detail.Content = new StorageDeviceDetails();
+                }
+                else
+                {
+                    Detail.Content = null;
+                }
             }
             //Detail.Content = 
+        }
+
+        private void Suchfeld_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _itemDataService.Filter.ChangeFilterArguments(Suchfeld.Text);
+            _itemDataService.GetAll();
         }
     }
 }

@@ -1,22 +1,39 @@
 ﻿using Datenbank.Models;
+using Datenbank.Service;
 using Datenbank.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Datenbank.Services;
 
-public class ItemDataService : IItemDataService
+public class ItemDataService : IItemDataService ,INotifyPropertyChanged
 {
     private readonly LagerverwaltungDBContext _dbContext;
+    private ObservableCollection<Item> _items;
+    public readonly Filter Filter;
 
-    public List<Item> Items { get; private set; }
+    public event PropertyChangedEventHandler? PropertyChanged;
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) { PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); }
 
-    public ItemDataService(LagerverwaltungDBContext dbContext)
+    public ObservableCollection<Item> Items { get => _items; private set
+        {
+            if (_items == value) return;
+
+            _items = value;
+            OnPropertyChanged();
+        } 
+    }
+
+    public ItemDataService(LagerverwaltungDBContext dbContext, Filter filter)
     {
         _dbContext = dbContext;
+        Filter = filter;
     }
 
     public void Create()
@@ -36,11 +53,27 @@ public class ItemDataService : IItemDataService
 
     public void GetAll()
     {
-        Items = _dbContext.Item.ToList();
+        Items = new ObservableCollection<Item>(SearchProducts(Filter.returnFilterArgsArray()).ToList());
     }
 
     public void Update()
     {
         throw new NotImplementedException();
+    }
+
+    IQueryable<Item> SearchProducts(params string[] keywords)
+    {
+        IQueryable<Item> query = _dbContext.Item;
+
+        foreach (string keyword in keywords)
+        {
+            string temp = keyword;
+            query = query.Where(p => p.Name.Contains(temp)
+                                  || p.Label.Contains(temp)
+                                  || p.Amount.Equals(temp)
+                                  || p.Description.Contains(temp)
+                                     );
+        }
+        return query;
     }
 }
