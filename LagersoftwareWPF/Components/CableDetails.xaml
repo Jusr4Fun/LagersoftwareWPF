@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:LagersoftwareWPF.Components"
              mc:Ignorable="d" 
              d:DesignHeight="380" d:DesignWidth="300">
-    <Grid Grid.Row="1" Margin="20,20,20,20"
-          DataContext="{Binding _cable}">
+    <Grid Grid.Row="1" Margin="20,20,20,20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>

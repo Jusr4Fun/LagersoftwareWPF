@@ -26,6 +26,7 @@ namespace LagersoftwareWPF.Components
         {
             InitializeComponent();
             _cable = cable;
+            this.DataContext = _cable;
         }
     }
 }
