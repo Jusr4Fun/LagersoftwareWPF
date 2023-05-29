@@ -1,4 +1,6 @@
-﻿using Datenbank.Services;
+﻿using Datenbank.Models;
+using Datenbank.Services;
+using LagersoftwareWPF.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +39,10 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
         private void AllList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selected = AllList.SelectedItem;
+            if (selected.GetType() == typeof(Cable))
+            {
+                Detail.Content = new CableDetails();
+            }
             //Detail.Content = 
         }
     }
