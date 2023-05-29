@@ -33,5 +33,11 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
             itemdataservice.GetAll();
             AllList.ItemsSource = itemdataservice.Items;
         }
+
+        private void AllList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = AllList.SelectedItem;
+            //Detail.Content = 
+        }
     }
 }
