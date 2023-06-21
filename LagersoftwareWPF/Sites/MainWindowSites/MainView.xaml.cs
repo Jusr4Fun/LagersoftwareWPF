@@ -24,12 +24,29 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
     public partial class MainView : Page
     {
         private ItemDataService _itemDataService;
+        private List<string> templist = new List<string>();
+        private List<string> templist1 = new List<string>();
+        private List<string> templist2 = new List<string>();
         public MainView()
         {
             InitializeComponent();
             _itemDataService = new ItemDataService(new Datenbank.LagerverwaltungDBContext(), new Datenbank.Service.Filter());
             GetAllRequiredData();
+            tempdataini();
             this.DataContext = _itemDataService;
+        }
+
+        private void tempdataini()
+        {
+            templist.Add("Kabel");
+            FilterComboBox.ItemsSource = templist;
+            FilterComboBox.SelectedIndex = 0;
+            templist1.Add("1 - 2 Meter");
+            Laenge.ItemsSource = templist1;
+            Laenge.SelectedIndex = 0;
+            templist2.Add("Cat-Verlegekabel");
+            CableType.ItemsSource = templist2;
+            CableType.SelectedIndex = 0;
         }
 
         public void GetAllRequiredData()

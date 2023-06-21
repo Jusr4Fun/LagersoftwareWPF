@@ -21,7 +21,7 @@
             FontSize="25" 
             Grid.Row="0"/>
 
-        <Grid Grid.Row="1" Margin="20,0,20,20">
+        <Grid Grid.Row="1" Margin="20,0,20,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
@@ -37,96 +37,154 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock 
+            <TextBox 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="0" 
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
                     Text="Name:"/>
-            <TextBlock 
+            <TextBox
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="1" 
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
                     Text="Label:"/>
-            <TextBlock 
+            <TextBox
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="2" 
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
                     Text="Beschreibung:"/>
-            <TextBlock 
+            <TextBox
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="3" 
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
                     Text="Anzahl:"/>
-            <TextBlock 
+            <TextBox
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="4" 
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
                     Text="Lagerort:"/>
-            <TextBlock 
+            <TextBox 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="5" 
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
                     Text="Länge:"/>
-            <TextBlock 
+            <TextBox 
                     Margin="10" 
                     Grid.Column="0" 
                     Grid.Row="6" 
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
                     Text="Kabel-Typ:"/>
-            <TextBlock 
-                    Margin="10" 
-                    Grid.Column="0" 
-                    Grid.Row="7" 
-                    Text=""/>
-            <TextBlock 
-                    Margin="10" 
-                    Grid.Column="0" 
-                    Grid.Row="8" 
-                    Text=""/>
 
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding Name}" 
                     x:Name="Name"
+                    MaxLines="1"
                     Grid.Row="0"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler"
+                    Text="{Binding Label}"
                     x:Name="Label"
+                    MaxLines="1"
                     Grid.Row="1"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding Description}" 
                     x:Name="Beschreibung"
+                    MaxLines="1"
                     Grid.Row="2"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="1" 
                     x:Name="Anzahl"
+                    MaxLines="1"
                     Grid.Row="3"/>
-            <ComboBox 
+            <Grid
+                Grid.Row="4"
+                Grid.Column="1" 
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox 
+                    Grid.Column="0"
                     Margin="10" 
-                    Grid.Column="1" 
                     x:Name="Location"
                     DisplayMemberPath="LocationName"
-                    Text="Filler" 
-                    Grid.Row="4"/>
+                    Text="Filler"  
+                    />
+                <Button
+                    Grid.Column="1"
+                    Width="20" 
+                    Height="20" 
+                    x:Name="AddLocation"
+                    >
+                    <Path 
+                        Data="M0.5,0 L0.5,1 M0,0.5 L1,0.5"
+                        StrokeThickness="3"
+                        Stretch="Fill"
+                        Stroke="Green" />
+                </Button>
+            </Grid>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
                     Text="1" 
                     x:Name="Laenge"
+                    MaxLines="1"
                     Grid.Row="5"/>
-            <ComboBox 
+            <Grid
+                Grid.Row="6"
+                Grid.Column="1" 
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox 
                     Margin="10" 
                     x:Name="CableType"
                     DisplayMemberPath="CableTypeName"
-                    Grid.Column="1" 
+                    Grid.Column="0" 
                     Text="Filler" 
-                    Grid.Row="6"/>
+                    />
+                <Button
+                    Grid.Column="1"
+                    Width="20" 
+                    Height="20" 
+                    x:Name="AddCableType"
+                    >
+                    <Path 
+                        Data="M0.5,0 L0.5,1 M0,0.5 L1,0.5"
+                        StrokeThickness="3"
+                        Stretch="Fill"
+                        Stroke="Green" />
+                </Button>
+            </Grid>
         </Grid>
         <Grid Grid.Row="3" Margin=" 20,0,20,10" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
