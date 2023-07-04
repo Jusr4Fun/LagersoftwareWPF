@@ -53,7 +53,7 @@ public class ItemDataService : IItemDataService ,INotifyPropertyChanged
 
     public void GetAll()
     {
-        Items = new ObservableCollection<Item>(SearchProducts(Filter.returnFilterArgsArray()).ToList());
+        Items = new ObservableCollection<Item>(SearchItems(Filter.returnFilterArgsArray()).ToList());
     }
 
     public void Update()
@@ -61,7 +61,7 @@ public class ItemDataService : IItemDataService ,INotifyPropertyChanged
         throw new NotImplementedException();
     }
 
-    IQueryable<Item> SearchProducts(params string[] keywords)
+    IQueryable<Item> SearchItems(params string[] keywords)
     {
         IQueryable<Item> query = _dbContext.Item;
 

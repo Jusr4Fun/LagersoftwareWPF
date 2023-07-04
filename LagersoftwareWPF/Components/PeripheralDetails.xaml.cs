@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datenbank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace LagersoftwareWPF.Components
     /// </summary>
     public partial class PeripheralDetails : UserControl
     {
-        public PeripheralDetails()
+        private Peripheral _peripheral;
+        public PeripheralDetails(Peripheral peripheral)
         {
             InitializeComponent();
+            _peripheral = peripheral;
+            this.DataContext = _peripheral;
         }
     }
 }

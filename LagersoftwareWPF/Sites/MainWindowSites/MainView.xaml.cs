@@ -24,7 +24,7 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
     public partial class MainView : Page
     {
         private ItemDataService _itemDataService;
-        private List<string> templist = new List<string>();
+        private List<string> _kategorien = new List<string>() {"Kabel","Bildschirm","Netzwerk Gerät","PC","Peripherie","Speicher Gerät","Anderes"};
         private List<string> templist1 = new List<string>();
         private List<string> templist2 = new List<string>();
         public MainView()
@@ -38,8 +38,7 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
 
         private void tempdataini()
         {
-            templist.Add("Kabel");
-            FilterComboBox.ItemsSource = templist;
+            FilterComboBox.ItemsSource = _kategorien;
             FilterComboBox.SelectedIndex = 0;
             templist1.Add("1 - 2 Meter");
             Laenge.ItemsSource = templist1;
@@ -65,27 +64,27 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
                 }
                 else if (selected.GetType() == typeof(Display))
                 {
-                    Detail.Content = new DisplayDetails();
+                    Detail.Content = new DisplayDetails((Display)selected);
                 }
                 else if (selected.GetType() == typeof(NetworkDevice))
                 {
-                    Detail.Content = new NetworkDeviceDetails();
+                    Detail.Content = new NetworkDeviceDetails((NetworkDevice)selected);
                 }
                 else if (selected.GetType() == typeof(Other))
                 {
-                    Detail.Content = new OtherDetails();
+                    Detail.Content = new OtherDetails((Other)selected);
                 }
                 else if (selected.GetType() == typeof(PC))
                 {
-                    Detail.Content = new PCDetails();
+                    Detail.Content = new PCDetails((PC)selected);
                 }
                 else if (selected.GetType() == typeof(Peripheral))
                 {
-                    Detail.Content = new PeripheralDetails();
+                    Detail.Content = new PeripheralDetails((Peripheral)selected);
                 }
                 else if (selected.GetType() == typeof(StorageDevice))
                 {
-                    Detail.Content = new StorageDeviceDetails();
+                    Detail.Content = new StorageDeviceDetails((StorageDevice)selected);
                 }
                 else
                 {

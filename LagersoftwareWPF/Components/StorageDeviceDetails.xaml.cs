@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datenbank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace LagersoftwareWPF.Components
     /// </summary>
     public partial class StorageDeviceDetails : UserControl
     {
-        public StorageDeviceDetails()
+        private StorageDevice _storagedevice;
+        public StorageDeviceDetails(StorageDevice storageDevice)
         {
             InitializeComponent();
+            _storagedevice = storageDevice;
+            this.DataContext = _storagedevice;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datenbank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace LagersoftwareWPF.Components
     /// </summary>
     public partial class NetworkDeviceDetails : UserControl
     {
-        public NetworkDeviceDetails()
+        private NetworkDevice _networkdevice;
+        public NetworkDeviceDetails(NetworkDevice networkDevice)
         {
             InitializeComponent();
+            _networkdevice = networkDevice;
+            this.DataContext = _networkdevice;
         }
     }
 }

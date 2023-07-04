@@ -118,30 +118,30 @@
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding Name}" 
                     x:Name="Name"
                     MaxLines="1"
                     Grid.Row="0"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding Label}" 
                     x:Name="Label"
                     MaxLines="1"
                     Grid.Row="1"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler"
+                    Text="{Binding Description}"
                     x:Name="Beschreibung"
                     MaxLines="1"
                     Grid.Row="2"/>
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding Amount}" 
                     x:Name="Anzahl"
-            IsReadOnly="True"
+                    IsReadOnly="True"
                     MaxLines="1"
                     Grid.Row="3"/>
             <Grid
@@ -155,7 +155,7 @@
                 <ComboBox 
                     Margin="10" 
                     Grid.Column="0" 
-                    Text="Filler" 
+                    Text="{Binding Location}" 
                     DisplayMemberPath="LocationName"
                     x:Name="Lagerort"
                     />

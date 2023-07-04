@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datenbank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace LagersoftwareWPF.Components
     /// </summary>
     public partial class OtherDetails : UserControl
     {
-        public OtherDetails()
+        private Other _other;
+        public OtherDetails(Other other)
         {
             InitializeComponent();
+            _other = other;
+            this.DataContext = _other;
         }
     }
 }

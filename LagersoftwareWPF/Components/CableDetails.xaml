@@ -132,7 +132,7 @@
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="1" 
+                    Text="{Binding Amount}" 
                     x:Name="Anzahl"
                     IsReadOnly="True"
                     MaxLines="1"
@@ -150,7 +150,7 @@
                     Margin="10" 
                     x:Name="Location"
                     DisplayMemberPath="LocationName"
-                    Text="Filler"  
+                    Text="{Binding Location}"  
                     />
                 <Button
                     Grid.Column="1"
