@@ -149,8 +149,7 @@
                     Grid.Column="0"
                     Margin="10" 
                     x:Name="Location"
-                    DisplayMemberPath="LocationName"
-                    Text="{Binding Location}"  
+                    DisplayMemberPath="LocationName" 
                     />
                 <Button
                     Grid.Column="1"
@@ -168,7 +167,7 @@
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="1" 
+                    Text="{Binding Length}" 
                     x:Name="Laenge"
                     MaxLines="1"
                     Grid.Row="5"/>

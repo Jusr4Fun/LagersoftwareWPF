@@ -99,10 +99,10 @@
                     Kategorie
                 </TextBox>
                 <ComboBox
-                
-                x:Name="FilterComboBox"
-                Height="20"
-                Width="125"
+                    SelectionChanged="FilterComboBox_SelectionChanged"
+                    x:Name="FilterComboBox"
+                    Height="20"
+                    Width="125"
                 />
             </StackPanel>
             

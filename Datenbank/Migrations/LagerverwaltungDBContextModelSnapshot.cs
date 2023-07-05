@@ -156,6 +156,10 @@ namespace Datenbank.Migrations
                     b.Property<int>("ScreenHeight")
                         .HasColumnType("int");
 
+                    b.Property<string>("ScreenSizeName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<int>("ScreenWidth")
                         .HasColumnType("int");
 

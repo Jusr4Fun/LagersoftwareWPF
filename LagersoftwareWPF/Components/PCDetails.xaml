@@ -161,7 +161,6 @@
                 <ComboBox 
                     Margin="10" 
                     Grid.Column="0" 
-                    Text="{Binding Location}" 
                     DisplayMemberPath="LocationName"
                     x:Name="Lagerort"
                     />
@@ -181,7 +180,7 @@
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding SerialNumber}" 
                     x:Name="Seriennummer"
                     MaxLines="1"
                     Grid.Row="5"/>
@@ -196,7 +195,6 @@
                 <ComboBox 
                     Margin="10" 
                     Grid.Column="0" 
-                    Text="Filler" 
                     DisplayMemberPath="ManufacturerName"
                     x:Name="Herrsteller"
                     />
@@ -216,7 +214,7 @@
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding InstalledKey}" 
                     x:Name="InstallierterKey"
                     MaxLines="1"
                     Grid.Row="7"/>

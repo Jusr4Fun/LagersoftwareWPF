@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datenbank.Migrations
 {
     [DbContext(typeof(LagerverwaltungDBContext))]
-    [Migration("20230525070934_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230704065727_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,6 +158,10 @@ namespace Datenbank.Migrations
 
                     b.Property<int>("ScreenHeight")
                         .HasColumnType("int");
+
+                    b.Property<string>("ScreenSizeName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("ScreenWidth")
                         .HasColumnType("int");

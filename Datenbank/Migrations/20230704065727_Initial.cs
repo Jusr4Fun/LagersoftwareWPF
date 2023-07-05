@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Datenbank.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -113,6 +113,8 @@ namespace Datenbank.Migrations
                 {
                     ScreenSizeID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ScreenSizeName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ScreenWidth = table.Column<int>(type: "int", nullable: false),
                     ScreenHeight = table.Column<int>(type: "int", nullable: false),
                     ScreenDiagonal = table.Column<double>(type: "double", nullable: false)

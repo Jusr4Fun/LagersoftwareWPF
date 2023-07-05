@@ -154,8 +154,7 @@
                 </Grid.ColumnDefinitions>
                 <ComboBox 
                     Margin="10" 
-                    Grid.Column="0" 
-                    Text="{Binding Location}" 
+                    Grid.Column="0"  
                     DisplayMemberPath="LocationName"
                     x:Name="Lagerort"
                     />
@@ -185,7 +184,7 @@
                     Grid.Column="0" 
                     Text="Filler" 
                     DisplayMemberPath="PeripheralTypeName"
-                    x:Name="PeriherieTyp"
+                    x:Name="PeripherieTyp"
                     />
                 <Button
                     Grid.Column="1"

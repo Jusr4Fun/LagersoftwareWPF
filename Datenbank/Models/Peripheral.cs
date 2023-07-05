@@ -8,6 +8,6 @@ namespace Datenbank.Models;
 
 public class Peripheral : Item
 {
-    public int PeriphalTypeID { get; set; }
+    public int PeripheralTypeID { get; set; }
     public PeripheralType PeripheralType { get; set; }
 }

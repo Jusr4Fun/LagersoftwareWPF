@@ -184,7 +184,7 @@
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding SerialNumber}" 
                     x:Name="Seriennummer"
                     MaxLines="1"
                     Grid.Row="5"/>
@@ -219,7 +219,7 @@
             <TextBox 
                     Margin="10" 
                     Grid.Column="1" 
-                    Text="Filler" 
+                    Text="{Binding MacAdress}" 
                     x:Name="MacAdress"
                     MaxLines="1"
                     Grid.Row="7"/>

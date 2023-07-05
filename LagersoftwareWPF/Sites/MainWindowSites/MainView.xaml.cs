@@ -24,7 +24,7 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
     public partial class MainView : Page
     {
         private ItemDataService _itemDataService;
-        private List<string> _kategorien = new List<string>() {"Kabel","Bildschirm","Netzwerk Gerät","PC","Peripherie","Speicher Gerät","Anderes"};
+        private List<string> _kategorien = new List<string>() {"","Kabel","Bildschirm","Netzwerk Gerät","PC","Peripherie","Speicher Gerät","Anderes"};
         private List<string> templist1 = new List<string>();
         private List<string> templist2 = new List<string>();
         public MainView()
@@ -98,6 +98,15 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
         {
             _itemDataService.Filter.ChangeFilterArguments(Suchfeld.Text);
             _itemDataService.GetAll();
+        }
+
+        private void FilterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var test = FilterComboBox.SelectedItem;
+            if (test != null)
+            {
+
+            }
         }
     }
 }
