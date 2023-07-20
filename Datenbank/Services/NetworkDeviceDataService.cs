@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class NetworkDeviceDataService
+    public class NetworkDeviceDataService : INetworkDeviceDataService
     {
         private LagerverwaltungDBContext _dbContext;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services;
 
-public class LocationDataService
+public class LocationDataService : ILocationDataService
 {
     private readonly LagerverwaltungDBContext _dbContext;
 

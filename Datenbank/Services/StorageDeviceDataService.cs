@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class StorageDeviceDataService
+    public class StorageDeviceDataService : IStorageDeviceDataService
     {
         private LagerverwaltungDBContext _dbContext;
 
@@ -22,7 +22,7 @@ namespace Datenbank.Services
         {
             var storagedevice = new StorageDevice()
             {
-                Name = name, 
+                Name = name,
                 Label = label,
                 Description = beschreibung,
                 Amount = anzahl,

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class ScreeSizeDataService
+    public class ScreeSizeDataService : IScreeSizeDataService
     {
         private LagerverwaltungDBContext _dbContext;
-        public List<ScreenSize> ScreenSizeList {  get; private set; }
+        public List<ScreenSize> ScreenSizeList { get; private set; }
 
         public ScreeSizeDataService(LagerverwaltungDBContext dbContext)
         {

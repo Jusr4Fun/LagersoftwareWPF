@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class OtherDataService
+    public class OtherDataService : IOtherDataService
     {
         private LagerverwaltungDBContext _dbContext;
 

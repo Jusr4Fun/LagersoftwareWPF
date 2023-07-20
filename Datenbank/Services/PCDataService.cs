@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class PCDataService
+    public class PCDataService : IPCDataService
     {
         private LagerverwaltungDBContext _dbContext;
 
@@ -20,10 +20,10 @@ namespace Datenbank.Services
 
         public void Create(string name, string label, string beschreibung, int anzahl, Location lagerort, string seriennummer, Manufacturer herrsteller, string installedkey)
         {
-            var pc = new PC() 
-            { 
-                Name = name, 
-                Label = label, 
+            var pc = new PC()
+            {
+                Name = name,
+                Label = label,
                 Description = beschreibung,
                 Amount = anzahl,
                 Location = lagerort,

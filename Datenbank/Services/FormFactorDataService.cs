@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class FormFactorDataService
+    public class FormFactorDataService : IFormFactorDataService
     {
         private LagerverwaltungDBContext _dbContext;
         public List<FormFactor> FormFactorList { get; private set; }

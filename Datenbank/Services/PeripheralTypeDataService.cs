@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class PeripheralTypeDataService
+    public class PeripheralTypeDataService : IPeripheralTypeDataService
     {
         private LagerverwaltungDBContext _dbContext;
         public List<PeripheralType> PeripheralTypeList { get; set; }

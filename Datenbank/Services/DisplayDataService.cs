@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class DisplayDataService
+    public class DisplayDataService : IDisplayDataService
     {
         private LagerverwaltungDBContext _dbContext;
 

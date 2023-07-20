@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services;
 
-public class CableDataService
+public class CableDataService : ICableDataService
 {
     private readonly LagerverwaltungDBContext _dbcontext;
 
@@ -20,7 +20,7 @@ public class CableDataService
 
     public void Create(string name, string label, string despriction, int amount, Location location, double length, CableType cableType)
     {
-        var cable = new Cable() 
+        var cable = new Cable()
         {
             Name = name,
             Label = label,

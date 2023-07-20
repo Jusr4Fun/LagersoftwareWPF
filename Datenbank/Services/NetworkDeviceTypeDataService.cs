@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class NetworkDeviceTypeDataService
+    public class NetworkDeviceTypeDataService : INetworkDeviceTypeDataService
     {
         private readonly LagerverwaltungDBContext _dbContext;
 
@@ -16,7 +16,7 @@ namespace Datenbank.Services
 
         public NetworkDeviceTypeDataService(LagerverwaltungDBContext dBContext)
         {
-            _dbContext = dBContext;        
+            _dbContext = dBContext;
         }
 
         public void Create()

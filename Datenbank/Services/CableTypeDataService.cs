@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services;
 
-public class CableTypeDataService
+public class CableTypeDataService : ICableTypeDataService
 {
     private readonly LagerverwaltungDBContext _dbContext;
     public List<CableType> CableTypeList { get; private set; }

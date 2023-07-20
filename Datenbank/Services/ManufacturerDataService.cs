@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Datenbank.Services
 {
-    public class ManufacturerDataService
+    public class ManufacturerDataService : IManufacturerDataService
     {
         private LagerverwaltungDBContext _dbContext;
 
         public List<Manufacturer> ManufacturerList { get; private set; }
-        public ManufacturerDataService(LagerverwaltungDBContext dbContext) 
+        public ManufacturerDataService(LagerverwaltungDBContext dbContext)
         {
             _dbContext = dbContext;
         }
