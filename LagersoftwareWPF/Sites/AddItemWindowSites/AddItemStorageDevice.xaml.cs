@@ -24,8 +24,8 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites;
 /// </summary>
 public partial class AddItemStorageDevice : Page
 {
-    private LagerverwaltungDBContext _dbContext;
-    private StorageDeviceDataService _storagedeviceDataService;
+    private protected LagerverwaltungDBContext _dbContext;
+    private protected StorageDeviceDataService _storagedeviceDataService;
     public AddItemStorageDevice()
     {
         InitializeComponent();
@@ -66,7 +66,7 @@ public partial class AddItemStorageDevice : Page
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Bitte überprüfen sie ihre Eingaben");
+            MessageBox.Show("Bitte überprüfen sie ihre Eingaben" + ex.Message);
         }
     }
 
