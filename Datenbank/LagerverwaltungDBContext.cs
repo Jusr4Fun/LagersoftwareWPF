@@ -1,27 +1,26 @@
 ﻿using Datenbank.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace Datenbank;
 
 public class LagerverwaltungDBContext : DbContext
 {
-    public DbSet<Item> Item { get; set; }
-    public DbSet<Location> Location { get; set; }
-    public DbSet<FormFactor> FormFactor { get; set; }
-    public DbSet<CableType> CableType { get; set; }
-    public DbSet<Cable> Cable { get; set; }
-    public DbSet<Display> Display { get; set; }
-    public DbSet<Other> Other { get; set; }
-    public DbSet<ScreenSize> ScreenSize { get; set; }
-    public DbSet<Manufacturer>  Manufacturer { get; set; }
-    public DbSet<NetworkDevice> NetworkDevice { get; set; }
-    public DbSet<NetworkDeviceType> NetworkDeviceType { get; set; }
-    public DbSet<PeripheralType> PeripheralType { get; set; }
-    public DbSet<Peripheral> Peripheral { get; set; }
-    public DbSet<StorageDevice> StorageDevice { get; set; }
+    public DbSet<Item> Item => Set<Item>();
+    public DbSet<Location> Location => Set<Location>();
+    public DbSet<FormFactor> FormFactor => Set<FormFactor>();
+    public DbSet<CableType> CableType => Set<CableType>();
+    public DbSet<Cable> Cable => Set<Cable>();
+    public DbSet<Display> Display => Set<Display>();
+    public DbSet<Other> Other => Set<Other>();
+    public DbSet<ScreenSize> ScreenSize => Set<ScreenSize>();
+    public DbSet<Manufacturer>  Manufacturer => Set<Manufacturer>();
+    public DbSet<NetworkDevice> NetworkDevice => Set<NetworkDevice>();
+    public DbSet<NetworkDeviceType> NetworkDeviceType => Set<NetworkDeviceType>();
+    public DbSet<PeripheralType> PeripheralType => Set<PeripheralType>();
+    public DbSet<Peripheral> Peripheral => Set<Peripheral>();
+    public DbSet<StorageDevice> StorageDevice => Set<StorageDevice>();
+    public DbSet<PC> PC => Set<PC>();
 
-    public DbSet<PC> PC { get; set; }
 
     static readonly string connectionString = "Server=localhost; User ID=root; Password=Chance2015 ;Database=Lagersoftware";
 

@@ -56,7 +56,7 @@ public partial class AddItemOther : Page
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Bitte überprüfen sie ihre Eingaben");
+            MessageBox.Show("Bitte überprüfen sie ihre Eingaben" + ex.Message);
         }
     }
 
