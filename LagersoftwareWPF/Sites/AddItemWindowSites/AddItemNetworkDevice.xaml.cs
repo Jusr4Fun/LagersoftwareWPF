@@ -27,8 +27,8 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites;
 /// </summary>
 public partial class AddItemNetworkDevice : Page
 {
-    private LagerverwaltungDBContext _dbContext;
-    private NetworkDeviceDataService _networkdeviceDataService;
+    private protected LagerverwaltungDBContext _dbContext;
+    private protected NetworkDeviceDataService _networkdeviceDataService;
     public AddItemNetworkDevice()
     {
         InitializeComponent();
@@ -54,7 +54,7 @@ public partial class AddItemNetworkDevice : Page
     {
         try
         {
-            _networkdeviceDataService.Create(Name.Text,
+            _networkdeviceDataService.Create(Benennung.Text,
                                          Label.Text,
                                          Beschreibung.Text,
                                          Convert.ToInt32(Anzahl.Text),
@@ -69,7 +69,7 @@ public partial class AddItemNetworkDevice : Page
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Bitte überprüfen sie ihre Eingaben");
+            MessageBox.Show("Bitte überprüfen sie ihre Eingaben" + ex.Message);
         }
     }
 

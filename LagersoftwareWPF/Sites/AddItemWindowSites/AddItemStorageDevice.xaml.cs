@@ -51,7 +51,7 @@ public partial class AddItemStorageDevice : Page
     {
         try
         {
-            _storagedeviceDataService.Create(Name.Text,
+            _storagedeviceDataService.Create(Benennung.Text,
                                              Label.Text,
                                              Beschreibung.Text,
                                              Convert.ToInt32(Anzahl.Text),

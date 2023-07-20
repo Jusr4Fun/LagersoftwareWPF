@@ -9,5 +9,5 @@ namespace Datenbank.Models;
 public class Peripheral : Item
 {
     public int PeripheralTypeID { get; set; }
-    public PeripheralType PeripheralType { get; set; }
+    public PeripheralType PeripheralType { get; set; } = null!;
 }

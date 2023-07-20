@@ -2,5 +2,5 @@
 
 public class PC : Device 
 {
-    public string InstalledKey { get; set; }
+    public string InstalledKey { get; set; } = null!;
 }

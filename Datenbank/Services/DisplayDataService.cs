@@ -11,7 +11,7 @@ namespace Datenbank.Services
 {
     public class DisplayDataService : IDisplayDataService
     {
-        private LagerverwaltungDBContext _dbContext;
+        private protected LagerverwaltungDBContext _dbContext;
 
         public List<Display> DisplayList { get; private set; }
 

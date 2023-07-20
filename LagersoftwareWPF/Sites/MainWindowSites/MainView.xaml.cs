@@ -23,7 +23,7 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
     /// </summary>
     public partial class MainView : Page
     {
-        private ItemDataService _itemDataService;
+        private protected ItemDataService _itemDataService;
         private List<string> _kategorien = new List<string>() {"","Kabel","Bildschirm","Netzwerk Gerät","PC","Peripherie","Speicher Gerät","Anderes"};
         private List<string> templist1 = new List<string>();
         private List<string> templist2 = new List<string>();

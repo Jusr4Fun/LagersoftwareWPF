@@ -44,7 +44,7 @@ public partial class AddItemOther : Page
     {
         try
         {
-            _otherDataService.Create(Name.Text,
+            _otherDataService.Create(Benennung.Text,
                                      Label.Text,
                                      Beschreibung.Text,
                                      Convert.ToInt32(Anzahl.Text),

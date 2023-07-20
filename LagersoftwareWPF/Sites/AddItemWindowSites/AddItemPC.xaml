@@ -111,7 +111,7 @@
                     Margin="10" 
                     Grid.Column="1" 
                     Text="Filler" 
-                    x:Name="Name"
+                    x:Name="Benennung"
                     MaxLines="1"
                     Grid.Row="0"/>
             <TextBox 

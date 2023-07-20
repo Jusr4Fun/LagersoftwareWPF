@@ -9,8 +9,8 @@ namespace Datenbank.Models
     public class PeripheralType
     {
         public int PeripheralTypeID { get; set; }
-        public string PeripheralTypeName { get; set; }
+        public string PeripheralTypeName { get; set; } = null!;
 
-        public ICollection<Peripheral> Peripheral { get; set; }
+        public ICollection<Peripheral> Peripheral { get; set; } = null!;
     }
 }

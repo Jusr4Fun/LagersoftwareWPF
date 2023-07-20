@@ -24,8 +24,8 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites;
 /// </summary>
 public partial class AddItemPC : Page
 {
-    private LagerverwaltungDBContext _dbContext;
-    private PCDataService _pcDataService;
+    private protected LagerverwaltungDBContext _dbContext;
+    private protected PCDataService _pcDataService;
     public AddItemPC()
     {
         InitializeComponent();
@@ -48,7 +48,7 @@ public partial class AddItemPC : Page
     {
         try
         {
-            _pcDataService.Create(Name.Text,
+            _pcDataService.Create(Benennung.Text,
                                   Label.Text,
                                   Beschreibung.Text,
                                   Convert.ToInt32(Anzahl.Text),
@@ -62,7 +62,7 @@ public partial class AddItemPC : Page
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Bitte überprüfen sie ihre Eingaben");
+            MessageBox.Show("Bitte überprüfen sie ihre Eingaben" + ex.Message);
         }
     }
 

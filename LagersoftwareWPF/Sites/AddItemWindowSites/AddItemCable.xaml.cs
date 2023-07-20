@@ -23,8 +23,8 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites
     /// </summary>
     public partial class AddItemCable : Page
     {
-        private LagerverwaltungDBContext _dbContext;
-        private CableDataService _cableDataService;
+        private protected LagerverwaltungDBContext _dbContext;
+        private protected CableDataService _cableDataService;
         public AddItemCable()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites
 
         private void SaveNew_Click(object sender, RoutedEventArgs e)
         {
-            string name = Name.Text;
+            string name = Benennung.Text;
             string label = Label.Text;
             string beschreibung = Beschreibung.Text;
             int anzahl = Convert.ToInt32(Anzahl.Text);
@@ -59,7 +59,7 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites
             } 
             catch (Exception ex)
             {
-                MessageBox.Show("Bitte überprüfen sie ihre Eingaben");
+                MessageBox.Show("Bitte überprüfen sie ihre Eingaben" + ex.Message);
             }
         }
 

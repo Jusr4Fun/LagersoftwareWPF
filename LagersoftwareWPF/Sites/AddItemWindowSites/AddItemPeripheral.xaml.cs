@@ -23,8 +23,8 @@ namespace LagersoftwareWPF.Sites.AddItemWindowSites;
     /// </summary>
 public partial class AddItemPeripheral : Page
 {
-    private LagerverwaltungDBContext _dbContext;
-    private PeripheralDataService _peripheralDataService;
+    private protected LagerverwaltungDBContext _dbContext;
+    private protected PeripheralDataService _peripheralDataService;
     public AddItemPeripheral()
     {
         InitializeComponent();
@@ -47,7 +47,7 @@ public partial class AddItemPeripheral : Page
     {
         try
         {
-            _peripheralDataService.Create(Name.Text,
+            _peripheralDataService.Create(Benennung.Text,
                                           Label.Text,
                                           Beschreibung.Text,
                                           Convert.ToInt32(Anzahl.Text),
@@ -59,7 +59,7 @@ public partial class AddItemPeripheral : Page
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Bitte überprüfen sie ihre Eingaben");
+            MessageBox.Show("Bitte überprüfen sie ihre Eingaben" + ex.Message);
         }
     }
 

@@ -12,13 +12,19 @@ namespace Datenbank.Services;
 public class ItemDataService : IItemDataService ,INotifyPropertyChanged
 {
     private readonly LagerverwaltungDBContext _dbContext;
-    private ObservableCollection<Item> _items;
+    private ObservableCollection<Item>? _items;
     public readonly Filter Filter;
 
     public event PropertyChangedEventHandler? PropertyChanged;
-    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) { PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); }
+    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null) { PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); }
 
-    public ObservableCollection<Item> Items { get => _items; private set
+    public ObservableCollection<Item> Items { get 
+        { 
+            // unschöner fix falls _items null ist
+            _items ??= new ObservableCollection<Item>();
+            return _items;
+        } 
+        private set
         {
             if (_items == value) return;
 
@@ -69,6 +75,7 @@ public class ItemDataService : IItemDataService ,INotifyPropertyChanged
                                   || p.Label.Contains(temp)
                                   || p.Amount.Equals(temp)
                                   || p.Description.Contains(temp)
+                                  || p.Location.LocationName.Contains(temp)
                                      );
         }
         return query;

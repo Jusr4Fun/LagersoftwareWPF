@@ -6,7 +6,7 @@ public class Location
 {
     public int LocationID { get; set; }
 
-    public string LocationName { get; set; }
+    public string LocationName { get; set; } = null!;
 
-    public ICollection<Item> Item { get; set; }
+    public ICollection<Item> Item { get; set; } = null!;
 }
