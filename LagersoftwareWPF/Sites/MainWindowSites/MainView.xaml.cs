@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -31,27 +32,22 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
         {
             InitializeComponent();
             _itemDataService = new ItemDataService(new Datenbank.LagerverwaltungDBContext(), new Datenbank.Service.Filter());
-            GetAllRequiredData();
-            tempdataini();
+            _itemDataService.GetAll();
+            FilterComboBox.ItemsSource = _kategorien;
             this.DataContext = _itemDataService;
         }
 
-        private void tempdataini()
-        {
-            FilterComboBox.ItemsSource = _kategorien;
-            FilterComboBox.SelectedIndex = 0;
-            templist1.Add("1 - 2 Meter");
-            Laenge.ItemsSource = templist1;
-            Laenge.SelectedIndex = 0;
-            templist2.Add("Cat-Verlegekabel");
-            CableType.ItemsSource = templist2;
-            CableType.SelectedIndex = 0;
-        }
-
-        public void GetAllRequiredData()
-        {
-            _itemDataService.GetAll();
-        }
+        //private void tempdataini()
+        //{
+            
+        //    FilterComboBox.SelectedIndex = 0;
+        //    templist1.Add("1 - 2 Meter");
+        //    Laenge.ItemsSource = templist1;
+        //    Laenge.SelectedIndex = 0;
+        //    templist2.Add("Cat-Verlegekabel");
+        //    CableType.ItemsSource = templist2;
+        //    CableType.SelectedIndex = 0;
+        //}
 
         private void AllList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -96,7 +92,14 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
 
         private void Suchfeld_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _itemDataService.Filter.ChangeFilterArguments(Suchfeld.Text);
+            if (Suchfeld.Text != "")
+            {
+                _itemDataService.Filter.ChangeFilterArguments(Suchfeld.Text);
+            }
+            else
+            {
+                _itemDataService.Filter.ClearFilters();
+            }
             _itemDataService.GetAll();
         }
 
@@ -105,7 +108,42 @@ namespace LagersoftwareWPF.Sites.MainWindowSites
             var test = FilterComboBox.SelectedItem;
             if (test != null)
             {
+                if (test.Equals(""))
+                {
+                    _itemDataService.Filter.ChangeTypeFilter(null);
+                    _itemDataService.GetAll();
+                    Filter.Content = null;
+                }
+                else if (test.Equals("Kabel"))
+                {
+                    _itemDataService.Filter.ChangeTypeFilter(new Cable());
+                    _itemDataService.GetAll();
+                    Filter.Content = new CableFilter();
+                }
+                else if(test.Equals("Bildschirm"))
+                {
 
+                }               
+                else if (test.Equals("Netzwerk Gerät"))
+                {
+
+                }
+                else if (test.Equals("PC"))
+                {
+
+                }
+                else if (test.Equals("Peripherie"))
+                {
+
+                }
+                else if (test.Equals("Speicher Gerät"))
+                {
+
+                }
+                else if (test.Equals("Anderes"))
+                {
+
+                }
             }
         }
     }

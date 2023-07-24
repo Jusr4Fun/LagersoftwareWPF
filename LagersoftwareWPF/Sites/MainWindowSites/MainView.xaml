@@ -105,55 +105,15 @@
                     Width="125"
                 />
             </StackPanel>
-            
-            <Grid
-                Margin="20,0,0,0"
-                Grid.Row="0"
+
+            <ContentControl 
                 Grid.Column="1"
-                Grid.RowSpan="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBox 
-                    Margin="10" 
-                    Grid.Column="0" 
-                    Grid.Row="0" 
-                    BorderThickness="0"
-                    MaxLines="1"
-                    IsReadOnly="True"
-                    Text="Länge:"
-                    Visibility="Hidden"/>
-                <TextBox 
-                    Margin="10" 
-                    Grid.Column="0" 
-                    Grid.Row="1" 
-                    BorderThickness="0"
-                    MaxLines="1"
-                    IsReadOnly="True"
-                    Text="Kabel-Typ:"
-                    Visibility="Hidden"/>
-                <ComboBox 
-                    Margin="10"
-                    Grid.Row="0"
-                    Grid.Column="1" 
-                    Text="1" 
-                    x:Name="Laenge"
-                    Visibility="Hidden"
-                    />
-                <ComboBox 
-                    Margin="10" 
-                    x:Name="CableType"
-                    Grid.Column="1"
-                    Grid.Row="1"
-                    Text="Filler" 
-                    Visibility="Hidden"
-                    />
-            </Grid>
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Width="500"
+                Height="100"
+                x:Name="Filter"/>
+            
         </Grid>
 
         <ListView
